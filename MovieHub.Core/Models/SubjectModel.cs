@@ -14,5 +14,6 @@ namespace MovieHub.Core.Models
         public Array aka { get; set; }
         public string alt { get; set; }
         public string mobile_url { get; set; }
+        //
     }
 }
