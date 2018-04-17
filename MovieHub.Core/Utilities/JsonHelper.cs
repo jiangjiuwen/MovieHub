@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieHub.Core
+namespace MovieHub.Core.Utilities
 {
-    public class Class1
+    class JsonHelper
     {
     }
 }
