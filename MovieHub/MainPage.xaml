@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="MovieHub.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieHub"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+        <TextBlock x:Name="AppTitle" 
+                   Text="MovieHub-UPW" 
+                   Style="{StaticResource CaptionTextBlockStyle}" 
+                   IsHitTestVisible="False" 
+                   Canvas.ZIndex="1" />
+
+        <NavigationView Canvas.ZIndex="0" 
+                        Name="Navi" 
+                        IsSettingsVisible="True" 
+                        IsTabStop="True" 
+                        AlwaysShowHeader="False" 
+                        Header="APP" 
+                        Loaded="Navi_Loaded"
+                        ItemInvoked="Navi_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Uid="AppsNavItem" Icon="AllApps" Content="正在热映" Tag="in_theaters"/>
+                <NavigationViewItem x:Uid="GamesNavItem" Icon="Video" Content="即将上映" Tag="coming_soon"/>
+                <NavigationViewItem x:Uid="MusicNavItem" Icon="Audio" Content="Top250" Tag="top250"/>
+                <NavigationViewItem x:Uid="MusicNavItem" Icon="Audio" Content="北美票房榜" Tag="us_box"/>
+            </NavigationView.MenuItems>
+
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox Name="ASB" PlaceholderText="Search" QueryIcon="Find" />
+            </NavigationView.AutoSuggestBox>
+
+
+            <Frame Name="ContentFrame"/>
+        </NavigationView>
+    </Grid>
+</Page>
