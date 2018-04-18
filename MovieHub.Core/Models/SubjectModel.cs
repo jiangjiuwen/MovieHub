@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MovieHub.Core.Models
 {
+    [DataContract]
     public class SubjectModel
     {
-        public string id { get; set; }
-        public string title { get; set; }
-        public string original_title { get; set; }
-        public Array aka { get; set; }
-        public string alt { get; set; }
-        public string mobile_url { get; set; }
+        [DataMember(Name = "id")]
+        public string Id { get; set; }
+
+        [DataMember(Name = "title")]
+        public string Title { get; set; }
+
+        [DataMember(Name = "original_title")]
+        public string Original_title { get; set; }
+
+        [DataMember(Name = "aka")]
+        public List<string> Aka { get; set; }
+
+        [DataMember(Name = "alt")]
+        public string Alt { get; set; }
+
+        [DataMember(Name = "mobile_url")]
+        public string Mobile_url { get; set; }
         //
     }
 }
